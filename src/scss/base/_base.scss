@@ -2,8 +2,8 @@
 @use "../utilities/mixins" as *;
 
 ::selection {
-  color: $body-background-color;
-  background-color: $secondary-color;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(210, 100%, 50%);
   text-shadow: none;
 }
 
