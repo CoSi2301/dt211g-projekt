@@ -3,10 +3,14 @@
 
 .page_wrap {
   @include center-wrapper-1180;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 5em;
 }
 
 header {
-  position: relative;
+  position: fixed;
   line-height: 0;
   z-index: 20;
 }
@@ -15,4 +19,8 @@ header img {
   z-index: 21;
   width: 100%;
   height: auto;
+}
+
+main {
+  flex: 1;
 }

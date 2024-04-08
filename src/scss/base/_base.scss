@@ -17,15 +17,17 @@ body {
   min-width: $min-w-320;
   font-size: $base-font-size;
   background-color: $body-background-color;
-  background-size: 100% 100%;
+  background-size: cover;
   background-image: $body-background-image;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-y: scroll;
 }
 
 body::after {
-  z-index: 10;
+  z-index: 11;
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;

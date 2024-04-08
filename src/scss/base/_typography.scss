@@ -16,20 +16,36 @@ pre {
   }
 }
 
-.text_box_background p {
+.text_box_background p,
+footer p {
   font-family: $IBM_VGA-font-stack;
   letter-spacing: 0.15rem;
   text-align: left;
 }
 
 .text_box_background pre,
-.text_box_background p {
+.text_box_background p,
+footer p.notes {
+  color: $accent-color;
+  text-shadow: 0 0 10px #cdcdee40, 0 0 10px #cdcdee3a, 0 0 10px #cdcdee30,
+    0 0 10px #cdcdee2a, 0 0 10px #cdcdee20, 0 0 10px #cdcdee1a;
+}
+
+#main-text-header {
+  font-style: normal;
+}
+
+footer p.notes em {
+  font-style: normal;
   color: $primary-color;
   text-shadow: 0 0 10px #00ff3340, 0 0 10px #00ff333a, 0 0 10px #00ff3330,
     0 0 10px #00ff332a, 0 0 10px #00ff3320, 0 0 10px #00ff331a;
 }
 
-footer p {
-  font-family: $ibmplexmono-font-stack;
-  font-size: calc(calc(15px + 0.390625vw) * 0.7);
+footer p.notes a {
+  color: $secondary-color;
+  text-shadow: 0 0 10px #ffae0040, 0 0 10px #ffae003a, 0 0 10px #ffae0030,
+    0 0 10px #ffae002a, 0 0 10px #ffae0020, 0 0 10px #ffae001a;
+  position: relative;
+  z-index: 21;
 }

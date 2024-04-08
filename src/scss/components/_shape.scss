@@ -9,18 +9,22 @@
 
 .text_box_background span {
   animation: blinket 2s step-end infinite;
-  border-right: 0.15em solid $primary-color;
+  text-shadow: none;
 }
 
 @keyframes blinket {
   from,
   to {
-    border-color: transparent;
-    box-shadow: transparent;
+    color: transparent;
+    text-shadow: transparent;
   }
   50% {
-    border-color: $primary-color;
-    box-shadow: 0 0 10px #00ff3350, 0 0 10px #00ff334a, 0 0 10px #00ff3345,
-      0 0 10px #00ff333a, 0 0 10px #00ff3335, 0 0 10px #00ff332b;
+    color: $accent-color;
+    text-shadow: 0 0 10px #cdcdee40, 0 0 10px #cdcdee3a, 0 0 10px #cdcdee30,
+      0 0 10px #cdcdee2a, 0 0 10px #cdcdee20, 0 0 10px #cdcdee1a;
   }
+}
+
+#main-text-box {
+  margin-top: 2rem;
 }
