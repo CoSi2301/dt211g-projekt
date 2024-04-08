@@ -1,0 +1,32 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+pre {
+  line-height: 1.15;
+  letter-spacing: 0rem;
+  color: $primary-color;
+  font-size: calc($base-font-size * 0.6);
+  @include responsiv("min-320") {
+    font-size: calc($base-font-size * 0.6);
+  }
+  @include responsiv("tablet") {
+    font-size: calc($base-font-size * 0.8);
+  }
+  @include responsiv("desktop") {
+    font-size: $base-font-size;
+  }
+}
+
+.text_box_background p {
+  font-family: $IBM_VGA-font-stack;
+  letter-spacing: 0.15rem;
+  color: $primary-color;
+  text-shadow: 0 0 10px #00ff3350, 0 0 10px #00ff334a, 0 0 10px #00ff3345,
+    0 0 10px #00ff333a, 0 0 10px #00ff3335, 0 0 10px #00ff332b;
+  text-align: left;
+}
+
+footer p {
+  font-family: $ibmplexmono-font-stack;
+  font-size: calc(calc(15px + 0.390625vw) * 0.7);
+}

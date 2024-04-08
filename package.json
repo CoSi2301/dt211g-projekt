@@ -1,0 +1,16 @@
+{
+  "name": "dt211g-projekt",
+  "version": "1.0.0",
+  "description": "Projekt Giovanni",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "author": "Cosi2301",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
+    "parcel": "^2.12.0"
+  }
+}

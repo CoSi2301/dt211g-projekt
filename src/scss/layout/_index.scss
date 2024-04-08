@@ -1,0 +1,18 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.page_wrap {
+  @include center-wrapper-1180;
+}
+
+header {
+  position: relative;
+  line-height: 0;
+  z-index: 20;
+}
+
+header img {
+  z-index: 21;
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,40 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+::selection {
+  color: $body-background-color;
+  background-color: $secondary-color;
+  text-shadow: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  z-index: 10;
+  min-width: $min-w-320;
+  font-size: $base-font-size;
+  background-color: $body-background-color;
+  background-size: 100% 100%;
+  background-image: $body-background-image;
+  background-repeat: no-repeat;
+}
+
+body::after {
+  z-index: 10;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(#000000, 0.15),
+    rgba(#000000, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
