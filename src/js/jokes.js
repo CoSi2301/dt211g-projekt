@@ -132,6 +132,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             audio.play();
             audio.onended = function () {
               document.getElementById("translate-btn").disabled = false;
+              document
+                .getElementById("translate-btn")
+                .classList.remove("disabled");
             };
           })
           .catch((error) => console.error("Felmeddelande:", error));
@@ -176,6 +179,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .getElementById("translate-btn")
     .addEventListener("click", function () {
       document.getElementById("translate-btn").disabled = true;
+      document.getElementById("translate-btn").classList.add("disabled");
       startTranslation(apiKey);
       document.getElementById("home-btn").style.display = "inline-block";
       window.scrollTo({
