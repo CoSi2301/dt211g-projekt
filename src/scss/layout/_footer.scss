@@ -1,1 +1,15 @@
+footer {
+  margin: 2em 0;
+}
 
+.bottom-screen {
+  position: fixed;
+  line-height: 0;
+  z-index: 20;
+}
+
+.bottom-screen img {
+  z-index: 21;
+  width: 100%;
+  height: auto;
+}
