@@ -43,9 +43,14 @@ footer p.notes em {
 }
 
 footer p.notes a {
+  text-decoration: none;
   color: $secondary-color;
   text-shadow: 0 0 10px #ffae0040, 0 0 10px #ffae003a, 0 0 10px #ffae0030,
     0 0 10px #ffae002a, 0 0 10px #ffae0020, 0 0 10px #ffae001a;
   position: relative;
   z-index: 21;
+}
+
+footer p.notes a:hover {
+  text-decoration: underline;
 }
