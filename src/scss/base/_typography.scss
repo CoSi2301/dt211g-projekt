@@ -17,7 +17,8 @@ pre {
 }
 
 .text_box_background p,
-footer p {
+footer p,
+button {
   font-family: $IBM_VGA-font-stack;
   letter-spacing: 0.15rem;
   text-align: left;
@@ -47,8 +48,6 @@ footer p.notes a {
   color: $secondary-color;
   text-shadow: 0 0 10px #ffae0040, 0 0 10px #ffae003a, 0 0 10px #ffae0030,
     0 0 10px #ffae002a, 0 0 10px #ffae0020, 0 0 10px #ffae001a;
-  position: relative;
-  z-index: 21;
 }
 
 footer p.notes a:hover {

@@ -7,11 +7,6 @@
   z-index: 5;
 }
 
-#translate-btn {
-  position: relative;
-  z-index: 100;
-}
-
 .text_box_background span {
   animation: blinket 2s step-end infinite;
   text-shadow: none;
@@ -33,6 +28,7 @@
 #main-text-box {
   margin-top: 2rem;
   white-space: pre-wrap;
+  min-height: 335px;
 }
 
 #main-text-box .welcome-text {

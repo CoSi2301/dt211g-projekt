@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   }
 
-  async function initiateTranslation(apiKey) {
+  async function startTranslation(apiKey) {
     try {
       const joke = await fetchJoke();
 
@@ -100,6 +100,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             var audio = new Audio(URL.createObjectURL(audioBlob));
             audio.play();
+            audio.onended = function () {
+              document.getElementById("translate-btn").disabled = false;
+            };
           })
           .catch((error) => console.error("Felmeddelande:", error));
       }, 1000);
@@ -142,6 +145,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
   document
     .getElementById("translate-btn")
     .addEventListener("click", function () {
-      initiateTranslation(apiKey);
+      document.getElementById("translate-btn").disabled = true;
+      startTranslation(apiKey);
+      document.getElementById("home-btn").style.display = "inline-block";
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
     });
+
+  const hemButton = document.getElementById("home-btn");
+  hemButton.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
+    window.location.reload();
+    document.getElementById("home-btn").style.display = "none";
+  });
 });
