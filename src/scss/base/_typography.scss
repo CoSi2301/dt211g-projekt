@@ -36,6 +36,13 @@ footer p.notes {
   font-style: normal;
 }
 
+.arrows {
+  font-style: normal;
+  color: $primary-color;
+  text-shadow: 0 0 10px #00ff3340, 0 0 10px #00ff333a, 0 0 10px #00ff3330,
+    0 0 10px #00ff332a, 0 0 10px #00ff3320, 0 0 10px #00ff331a;
+}
+
 footer p.notes em {
   font-style: normal;
   color: $primary-color;

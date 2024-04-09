@@ -5,7 +5,7 @@ const welcomeContainer = document.getElementById("welcome-text");
 const titleContainer = document.getElementById("titlePic");
 const footerNotes = document.getElementById("notes");
 const welcomeText =
-  "En revolutionerande webbupplevelse där banbrytande teknik möter humor på ett sätt som sällan skådats! Vår unika webbtjänst kombinerar kraften hos tre öppna API:er. Den unika algoritm som tagits fram av våra skickliga tekniker hämtar ett slumpmässigt skämt och översätter detta med en otrolig precision. Skämtet läses sedan upp av den röststyrda Cloud Text-to-speech som konfigurerats och optimerats till att kunna leverera skämt med maximal tajming och känsla.<br><br>Förbered dig på att bli mäkta imponerad när skämten kommer till dig med en ljudupplevelse som du sent kommer att glömma.";
+  "En revolutionerande webbupplevelse där banbrytande teknik möter humor på ett sätt som sällan skådats! Vår unika webbtjänst kombinerar kraften hos tre öppna API:er. Den unika algoritmen som tagits fram av våra skickliga tekniker hämtar ett slumpmässigt skämt och översätter detta med en otrolig precision. Skämtet läses sedan upp av den röststyrda Cloud Text-to-speech som konfigurerats och optimerats till att kunna leverera skämt med maximal tajming och känsla.<br><br>Förbered dig på att bli mäkta imponerad när skämten kommer till dig med en ljudupplevelse som du sent kommer att glömma.";
 
 const titlePic = `▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 ██ ▄▄ ██▄██▀▄▄▀█▀███▀█ ▄▄▀█ ▄▄▀█ ▄▄▀██▄███ ▄▄▄ ██
@@ -73,8 +73,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
       var i = 0;
       var speed = 50;
 
-      document.getElementById("welcome-text").innerHTML +=
-        "<br><br>▼▼▼<br><br>> new lang: SV<br>--------------<br>";
+      document.getElementById(
+        "welcome-text"
+      ).innerHTML += `<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em class="arrows">▼▼▼▼</em><br><br>> new lang: SV<br>--------------<br>`;
       function typeWriter() {
         if (i < translationResult.length) {
           document.getElementById("welcome-text").innerHTML +=
