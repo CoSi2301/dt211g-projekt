@@ -1,0 +1,22 @@
+@use "../utilities/variables" as *;
+
+button {
+  border: 0;
+  padding: 10px 10px 10px 15px;
+  text-align: center;
+  background-color: $accent-color;
+  width: fit-content;
+  box-shadow: 0 0 10px #cdcdee40, 0 0 10px #cdcdee3a, 0 0 10px #cdcdee30,
+    0 0 10px #cdcdee2a, 0 0 10px #cdcdee20, 0 0 10px #cdcdee1a;
+}
+
+button:hover {
+  background-color: $secondary-color;
+  box-shadow: 0 0 10px #ffae0040, 0 0 10px #ffae003a, 0 0 10px #ffae0030,
+    0 0 10px #ffae002a, 0 0 10px #ffae0020, 0 0 10px #ffae001a;
+}
+
+#home-btn {
+  margin-top: 2em;
+  display: none;
+}
