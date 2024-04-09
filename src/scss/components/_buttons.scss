@@ -11,6 +11,7 @@ button {
 }
 
 button:hover {
+  cursor: pointer;
   background-color: $secondary-color;
   box-shadow: 0 0 10px #ffae0040, 0 0 10px #ffae003a, 0 0 10px #ffae0030,
     0 0 10px #ffae002a, 0 0 10px #ffae0020, 0 0 10px #ffae001a;
