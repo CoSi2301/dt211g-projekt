@@ -1,15 +1,28 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
 footer {
-  margin: 2em 0;
+  margin: 2em 0 3em 0;
+  @include responsiv("min-320") {
+    margin: 2em 0 4em 0;
+  }
+  @include responsiv("tablet") {
+    margin: 2em 0 4em 0;
+  }
+  @include responsiv("desktop") {
+    margin: 2em 0 5em 0;
+  }
 }
 
 .bottom-screen {
   position: fixed;
+  bottom: 0;
   line-height: 0;
-  z-index: 20;
+  z-index: 100;
 }
 
 .bottom-screen img {
-  z-index: 21;
+  z-index: 101;
   width: 100%;
   height: auto;
 }
