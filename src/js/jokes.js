@@ -1,16 +1,38 @@
 require("dotenv").config();
 const apiKey = process.env.GOOGLE_API_KEY;
 
+const welcomeContainer = document.getElementById("welcome-text");
+const titleContainer = document.getElementById("titlePic");
+const footerNotes = document.getElementById("notes");
+const welcomeText =
+  "En revolutionerande webbupplevelse där banbrytande teknik möter humor på ett sätt som sällan skådats! Vår unika webbtjänst kombinerar kraften hos tre öppna API:er. Den unika algoritm som tagits fram av våra skickliga tekniker hämtar ett slumpmässigt skämt och översätter detta med en otrolig precision. Skämtet läses sedan upp av den röststyrda Cloud Text-to-speech som konfigurerats och optimerats till att kunna leverera skämt med maximal tajming och känsla.<br><br>Förbered dig på att bli mäkta imponerad när skämten kommer till dig med en ljudupplevelse som du sent kommer att glömma.";
+
+const titlePic = `▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+██ ▄▄ ██▄██▀▄▄▀█▀███▀█ ▄▄▀█ ▄▄▀█ ▄▄▀██▄███ ▄▄▄ ██
+██ █▀▀██ ▄█ ██ ██ ▀ ██ ▀▀ █ ██ █ ██ ██ ▄██▄▄▄▀▀██
+██ ▀▀▄█▄▄▄██▄▄████▄███▄██▄█▄██▄█▄██▄█▄▄▄██ ▀▀▀ ██
+▄▄▄▄▄▄█████▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄███████▄▄▄▄▄▄
+██ ▄▄▄ █ █▀█ ▄▄▀█ ▄▄▀█▄ ▄█▄ ▄█ ▄▀▄ █ ▄▄▀█ ▄▄█ █▀██▄███ ▀██ ██
+██▄▄▄▀▀█ ▄▀█ ▀▀▄█ ▀▀ ██ ███ ██ █▄█ █ ▀▀ █▄▄▀█ ▄▀██ ▄██ █ █ ██
+██ ▀▀▀ █▄█▄█▄█▄▄█▄██▄██▄███▄██▄███▄█▄██▄█▄▄▄█▄█▄█▄▄▄██ ██▄ ██
+   ▀▀▀▀▀▀▀                                             ▀▀▀▀▀▀▀  ®`;
+
+const notesText = `Trots att filter är på plats för att filtrera bort de grövsta skämten så kan en del av dem fortfarande upplevas som stötande för vissa individer. Vi ber om överseende med detta.<br><br>Webbplatsen använder typsnitt från <a href='https://famfonts.com/compaq/' target='_blank'>| Famous Fonts |</a> och <a href='https://int10h.org/oldschool-pc-fonts/fontlist/font?ibm_vga_9x16' target='_blank'>| The Oldschool PC Font Resource |</a>.<br><br><em class="footer-copy">> Projektuppgift DT211G<br>> Giovannis Skrattmaskin<br>> ©CoSi2301 VT2024</em>`;
+
 let jokeText;
 
 document.addEventListener("DOMContentLoaded", (event) => {
+  welcomeContainer.innerHTML = welcomeText;
+  titleContainer.innerHTML = titlePic;
+  footerNotes.innerHTML = notesText;
+
   function fetchJoke() {
     return new Promise((resolve, reject) => {
       var baseURL = "https://v2.jokeapi.dev";
       var categories = "Any";
       var params = [
         "blacklistFlags=nsfw,religious,racist,sexist",
-        "idRange=0-100",
+        "idRange=0-182",
       ];
 
       var xhr = new XMLHttpRequest();
@@ -43,18 +65,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
         jokeText = `${joke.setup}\n\n${joke.delivery}`;
       }
 
-      // console.log(jokeText);
-      document.getElementById("main-text-box").textContent =
-        "//lang: EN\n" + jokeText;
+      document.getElementById("welcome-text").innerHTML =
+        "> old lang: EN<br>--------------<br>" + jokeText;
 
       const translationResult = await translateText(apiKey);
 
-      // console.log(translationResult);
-      document.getElementById("main-text-box").textContent +=
-        "\n\n...\n\n//lang: SV\n" + translationResult;
+      var i = 0;
+      var speed = 50;
 
-      document.getElementById("main-text-box").innerHTML +=
-        "<span>█</span><br><br>";
+      document.getElementById("welcome-text").innerHTML +=
+        "<br><br>▼▼▼<br><br>> new lang: SV<br>--------------<br>";
+      function typeWriter() {
+        if (i < translationResult.length) {
+          document.getElementById("welcome-text").innerHTML +=
+            translationResult.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+      typeWriter();
 
       setTimeout(function () {
         fetch(

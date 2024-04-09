@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Projekt Giovanni",
   "source": "src/index.html",
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
     "start": "parcel",
     "build": "parcel build"
