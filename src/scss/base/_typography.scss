@@ -2,11 +2,8 @@
 @use "../utilities/mixins" as *;
 
 pre {
+  white-space: pre;
   font-family: monospace, monospace;
-  line-height: 1.15;
-  letter-spacing: 0rem;
-  word-wrap: break-word;
-  text-align: justify;
   font-size: 8px;
   @include responsiv("min-320") {
     font-size: 8px;
