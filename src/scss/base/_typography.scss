@@ -2,19 +2,20 @@
 @use "../utilities/mixins" as *;
 
 pre {
+  font-family: monospace, monospace;
   line-height: 1.15;
   letter-spacing: 0rem;
   word-wrap: break-word;
   text-align: justify;
-  font-size: calc($base-font-size * 0.45);
+  font-size: 8px;
   @include responsiv("min-320") {
-    font-size: calc($base-font-size * 0.5);
+    font-size: 8px;
   }
   @include responsiv("tablet") {
-    font-size: calc($base-font-size * 0.8);
+    font-size: 16px;
   }
   @include responsiv("desktop") {
-    font-size: $base-font-size;
+    font-size: 24px;
   }
 }
 

@@ -2,8 +2,7 @@ $base-font-size: calc(15px + 0.390625vw);
 
 $comforter-font-stack: "Comforter", Arial, Helvetica, sans-serif;
 $berkshire-font-stack: "Berkshire Swash", "Helvetica Neue", Arial, sans-serif;
-$IBM_VGA-font-stack: "IBM_VGA", "IBM Plex Mono", "Courier New", Courier,
-  monospace;
+$IBM_VGA-font-stack: "IBM_VGA", monospace, "Courier New", Courier;
 
 $body-background-color: hsl(0, 3%, 6%);
 $body-background-image: radial-gradient(
