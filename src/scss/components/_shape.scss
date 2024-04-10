@@ -2,6 +2,7 @@
 @use "../utilities/mixins" as *;
 
 .text_box_background {
+  text-align: center;
   width: 100%;
   max-width: 1180px;
   z-index: 5;
