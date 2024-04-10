@@ -133,9 +133,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
             audio.play();
             audio.onended = function () {
               document.getElementById("translate-btn").disabled = false;
+              document.getElementById("home-btn").disabled = false;
               document
                 .getElementById("translate-btn")
                 .classList.remove("disabled");
+              document.getElementById("home-btn").classList.remove("disabled");
             };
           })
           .catch((error) => console.error(`Felmeddelande: ${error}`));
@@ -180,7 +182,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .getElementById("translate-btn")
     .addEventListener("click", function () {
       document.getElementById("translate-btn").disabled = true;
+      document.getElementById("home-btn").disabled = true;
       document.getElementById("translate-btn").classList.add("disabled");
+      document.getElementById("home-btn").classList.add("disabled");
       startTranslation(apiKey);
       document.getElementById("home-btn").style.display = "inline-block";
       const element = document.getElementById("welcome-text");
@@ -215,7 +219,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   hemButton.addEventListener("click", function () {
     welcomeContainer.innerHTML = welcomeText;
     window.scrollTo({
-      top: 0,
+      top: -200,
       left: 0,
       behavior: "smooth",
     });
