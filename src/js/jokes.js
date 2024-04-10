@@ -217,9 +217,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   const hemButton = document.getElementById("home-btn");
   hemButton.addEventListener("click", function () {
+    window.focus();
     welcomeContainer.innerHTML = welcomeText;
     window.scrollTo({
-      top: -200,
+      top: 0,
       left: 0,
       behavior: "smooth",
     });
