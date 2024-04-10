@@ -3,7 +3,7 @@
 
 pre {
   white-space: pre;
-  font-family: monospace, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 8px;
   @include responsiv("min-320") {
     font-size: 8px;
