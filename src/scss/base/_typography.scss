@@ -2,6 +2,8 @@
 @use "../utilities/mixins" as *;
 
 pre {
+  line-height: 1.15;
+  letter-spacing: 0;
   white-space: pre;
   font-family: $ibmplexmono-font-stack;
   font-size: 8px;
