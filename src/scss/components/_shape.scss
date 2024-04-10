@@ -29,18 +29,19 @@
 #main-text-box {
   margin: 2rem auto;
   white-space: pre-wrap;
-  padding: 0.75rem 0.75rem 0 0.75rem;
+  padding: 0.75rem;
   border: 2px solid $accent-color;
   @include responsiv("min-320") {
+    padding: 0.75rem;
     border: 4px solid$accent-color;
   }
   @include responsiv("tablet") {
-    padding: 1rem 1rem 0 1rem;
+    padding: 1rem;
     border: 6px solid $accent-color;
     min-height: 205px;
   }
   @include responsiv("desktop") {
-    padding: 2rem 1.75rem 0 1.75rem;
+    padding: 1.5rem;
     border: 8px solid $accent-color;
     min-height: 285px;
   }
