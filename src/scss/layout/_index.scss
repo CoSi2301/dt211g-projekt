@@ -6,15 +6,15 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: 2em;
+  padding-top: 3em;
   @include responsiv("min-320") {
-    padding-top: 3.5em;
+    padding-top: 3em;
   }
   @include responsiv("tablet") {
-    padding-top: 4em;
+    padding-top: 2.5em;
   }
   @include responsiv("desktop") {
-    padding-top: 5em;
+    padding-top: 3em;
   }
 }
 

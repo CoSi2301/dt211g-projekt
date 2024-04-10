@@ -6,15 +6,16 @@ const titleContainer = document.getElementById("titlePic");
 const footerNotes = document.getElementById("notes");
 const welcomeText = `En revolutionerande webbupplevelse där banbrytande teknik möter humor på ett sätt som sällan skådats! Vår unika webbtjänst kombinerar kraften hos tre öppna API:er. Den unika algoritmen som tagits fram av våra skickliga programmerare hämtar ett slumpmässigt skämt och översätter detta med en otrolig precision. Skämtet läses sedan upp av den röststyrda Cloud Text-To-Speech som konfigurerats och optimerats till att kunna leverera skämt med maximal tajming och känsla.`;
 
-const titlePic = `       ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-      ██ ▄▄ ██▄██▀▄▄▀█▀███▀█ ▄▄▀█ ▄▄▀█ ▄▄▀██▄███ ▄▄▄ ██
-      ██ █▀▀██ ▄█ ██ ██ ▀ ██ ▀▀ █ ██ █ ██ ██ ▄██▄▄▄▀▀██
-      ██ ▀▀▄█▄▄▄██▄▄████▄███▄██▄█▄██▄█▄██▄█▄▄▄██ ▀▀▀ ██
- ▄▄▄▄▄▄█████▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄███████▄▄▄▄▄▄
-██ ▄▄▄ █ █▀█ ▄▄▀█ ▄▄▀█▄ ▄█▄ ▄█ ▄▀▄ █ ▄▄▀█ ▄▄█ █▀██▄███ ▀██ ██
-██▄▄▄▀▀█ ▄▀█ ▀▀▄█ ▀▀ ██ ███ ██ █▄█ █ ▀▀ █▄▄▀█ ▄▀██ ▄██ █ █ ██
-██ ▀▀▀ █▄█▄█▄█▄▄█▄██▄██▄███▄██▄███▄█▄██▄█▄▄▄█▄█▄█▄▄▄██ ██▄ ██
- ▀▀▀▀▀▀▀                                             ▀▀▀▀▀▀▀ ® `;
+const titlePic = `&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██ ▄▄ ██▄██▀▄▄▀█▀███▀█ ▄▄▀█ ▄▄▀█ ▄▄▀██▄███ ▄▄▄ ██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██ █▀▀██ ▄█ ██ ██ ▀ ██ ▀▀ █ ██ █ ██ ██ ▄██▄▄▄▀▀██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██ ▀▀▄█▄▄▄██▄▄████▄███▄██▄█▄██▄█▄██▄█▄▄▄██ ▀▀▀ ██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;▄▄▄▄▄▄█████▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄███████▄▄▄▄▄▄&nbsp;&nbsp;
+██ ▄▄▄ █ █▀█ ▄▄▀█ ▄▄▀█▄ ▄█▄ ▄█ ▄▀▄ █ ▄▄▀█ ▄▄█ █▀██▄███ ▀██ ██&nbsp;
+██▄▄▄▀▀█ ▄▀█ ▀▀▄█ ▀▀ ██ ███ ██ █▄█ █ ▀▀ █▄▄▀█ ▄▀██ ▄██ █ █ ██&nbsp;
+██ ▀▀▀ █▄█▄█▄█▄▄█▄██▄██▄███▄██▄███▄█▄██▄█▄▄▄█▄█▄█▄▄▄██ ██▄ ██&nbsp;
+&nbsp;▀▀▀▀▀▀▀&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▀▀▀▀▀▀▀&nbsp;®`;
 
 const notesText = `<span class="red">⚠</span> Trots att filter är på plats för att filtrera bort de grövsta skämten så kan en del av dem fortfarande upplevas som stötande för vissa individer. Vi ber om överseende med detta. <span class="red">⚠</span><br><br>Webbplatsen använder typsnitt från <a href='https://famfonts.com/compaq/' target='_blank'>| Famous Fonts |</a> och <a href='https://int10h.org/oldschool-pc-fonts/fontlist/font?ibm_vga_9x16' target='_blank'>| The Oldschool PC Font Resource |</a>.<br><br><hr><em class="footer-copy">> Projektuppgift DT211G<br>> Giovannis Skrattmaskin<br>> ©CoSi2301 VT2024</em>`;
 
