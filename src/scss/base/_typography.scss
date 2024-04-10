@@ -4,6 +4,8 @@
 pre {
   line-height: 1.15;
   letter-spacing: 0rem;
+  word-wrap: break-word;
+  text-align: justify;
   font-size: calc($base-font-size * 0.45);
   @include responsiv("min-320") {
     font-size: calc($base-font-size * 0.5);
