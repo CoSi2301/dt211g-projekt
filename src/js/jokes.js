@@ -4,8 +4,7 @@ const apiKey = process.env.GOOGLE_API_KEY;
 const welcomeContainer = document.getElementById("welcome-text");
 const titleContainer = document.getElementById("titlePic");
 const footerNotes = document.getElementById("notes");
-const welcomeText =
-  "En revolutionerande webbupplevelse där banbrytande teknik möter humor på ett sätt som sällan skådats! Vår unika webbtjänst kombinerar kraften hos tre öppna API:er. Den unika algoritmen som tagits fram av våra skickliga tekniker hämtar ett slumpmässigt skämt och översätter detta med en otrolig precision. Skämtet läses sedan upp av den röststyrda Cloud Text-to-speech som konfigurerats och optimerats till att kunna leverera skämt med maximal tajming och känsla.<br><br>Förbered dig på att bli mäkta imponerad när skämten kommer till dig med en ljudupplevelse som du sent kommer att glömma.";
+const welcomeText = `En revolutionerande webbupplevelse där banbrytande teknik möter humor på ett sätt som sällan skådats! Vår unika webbtjänst kombinerar kraften hos tre öppna API:er. Den unika algoritmen som tagits fram av våra skickliga programmerare hämtar ett slumpmässigt skämt och översätter detta med en otrolig precision. Skämtet läses sedan upp av den röststyrda Cloud Text-To-Speech som konfigurerats och optimerats till att kunna leverera skämt med maximal tajming och känsla.`;
 
 const titlePic = `▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 ██ ▄▄ ██▄██▀▄▄▀█▀███▀█ ▄▄▀█ ▄▄▀█ ▄▄▀██▄███ ▄▄▄ ██
@@ -15,9 +14,9 @@ const titlePic = `▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄�
 ██ ▄▄▄ █ █▀█ ▄▄▀█ ▄▄▀█▄ ▄█▄ ▄█ ▄▀▄ █ ▄▄▀█ ▄▄█ █▀██▄███ ▀██ ██
 ██▄▄▄▀▀█ ▄▀█ ▀▀▄█ ▀▀ ██ ███ ██ █▄█ █ ▀▀ █▄▄▀█ ▄▀██ ▄██ █ █ ██
 ██ ▀▀▀ █▄█▄█▄█▄▄█▄██▄██▄███▄██▄███▄█▄██▄█▄▄▄█▄█▄█▄▄▄██ ██▄ ██
-   ▀▀▀▀▀▀▀                                             ▀▀▀▀▀▀▀  ®`;
+   ▀▀▀▀▀▀▀                                             ▀▀▀▀▀▀▀ ® `;
 
-const notesText = `Trots att filter är på plats för att filtrera bort de grövsta skämten så kan en del av dem fortfarande upplevas som stötande för vissa individer. Vi ber om överseende med detta.<br><br>Webbplatsen använder typsnitt från <a href='https://famfonts.com/compaq/' target='_blank'>| Famous Fonts |</a> och <a href='https://int10h.org/oldschool-pc-fonts/fontlist/font?ibm_vga_9x16' target='_blank'>| The Oldschool PC Font Resource |</a>.<br><br><em class="footer-copy">> Projektuppgift DT211G<br>> Giovannis Skrattmaskin<br>> ©CoSi2301 VT2024</em>`;
+const notesText = `<span class="red">⚠</span> Trots att filter är på plats för att filtrera bort de grövsta skämten så kan en del av dem fortfarande upplevas som stötande för vissa individer. Vi ber om överseende med detta. <span class="red">⚠</span><br><br>Webbplatsen använder typsnitt från <a href='https://famfonts.com/compaq/' target='_blank'>| Famous Fonts |</a> och <a href='https://int10h.org/oldschool-pc-fonts/fontlist/font?ibm_vga_9x16' target='_blank'>| The Oldschool PC Font Resource |</a>.<br><br><hr><em class="footer-copy">> Projektuppgift DT211G<br>> Giovannis Skrattmaskin<br>> ©CoSi2301 VT2024</em>`;
 
 let jokeText;
 
@@ -43,12 +42,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
           var randomJoke = JSON.parse(xhr.responseText);
           resolve(randomJoke);
         } else {
-          reject("Fel vid hämtning. Statuskod: " + xhr.status);
+          reject(`Fel vid hämtning. Statuskod: ${xhr.status}`);
         }
       };
 
       xhr.onerror = function () {
-        reject("Nätverksfel.");
+        reject(`Nätverksfel.`);
       };
 
       xhr.send();
@@ -62,11 +61,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
       if (joke.type == "single") {
         jokeText = joke.joke;
       } else {
-        jokeText = `${joke.setup}\n\n${joke.delivery}`;
+        jokeText = `${joke.setup} ${joke.delivery}`;
       }
 
-      document.getElementById("welcome-text").innerHTML =
-        "> old lang: EN<br>--------------<br>" + jokeText;
+      document.getElementById(
+        "welcome-text"
+      ).innerHTML = `> old lang: EN<br>--------------<br> ${jokeText}`;
 
       const translationResult = await translateText(apiKey);
 
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         )
           .then((response) => {
             if (!response.ok) {
-              throw new Error("Nätverksfel.");
+              throw new Error(`Nätverksfel.`);
             }
             return response.json();
           })
@@ -137,10 +137,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 .classList.remove("disabled");
             };
           })
-          .catch((error) => console.error("Felmeddelande:", error));
+          .catch((error) => console.error(`Felmeddelande: ${error}`));
       }, 1000);
     } catch (error) {
-      console.error("Fel vid hämtning eller översättning:", error);
+      console.error(`Fel vid hämtning eller översättning: ${error}`);
     }
   }
 
@@ -163,14 +163,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
       );
 
       if (!response.ok) {
-        throw new Error("Nätverksfel.");
+        throw new Error(`Nätverksfel.`);
       }
 
       const data = await response.json();
       const translatedText = data.data.translations[0].translatedText;
       return translatedText;
     } catch (error) {
-      console.error("Kunde inte hämta översättningen:", error);
+      console.error(`Kunde inte hämta översättningen: ${error}`);
       throw error;
     }
   }
@@ -182,21 +182,42 @@ document.addEventListener("DOMContentLoaded", (event) => {
       document.getElementById("translate-btn").classList.add("disabled");
       startTranslation(apiKey);
       document.getElementById("home-btn").style.display = "inline-block";
+      const element = document.getElementById("welcome-text");
+      let offsetTop;
+
+      const smallDevice = window.matchMedia("(max-width: 760px)");
+      const mediumDevice = window.matchMedia(
+        "(min-width: 760.5px) and (max-width: 1180px)"
+      );
+      const largeDevice = window.matchMedia(
+        "(min-width: 1180.5px) and (max-width: 2000px)"
+      );
+      const xxlDevice = window.matchMedia("(min-width: 2000.5px)");
+
+      if (smallDevice.matches) {
+        offsetTop = element.getBoundingClientRect().top + window.scrollY - 120;
+      } else if (mediumDevice.matches) {
+        offsetTop = element.getBoundingClientRect().top + window.scrollY - 100;
+      } else if (largeDevice.matches) {
+        offsetTop = element.getBoundingClientRect().top + window.scrollY - 150;
+      } else if (xxlDevice.matches) {
+        offsetTop = element.getBoundingClientRect().top + window.scrollY - 180;
+      }
+
       window.scrollTo({
-        top: 0,
-        left: 0,
+        top: offsetTop,
         behavior: "smooth",
       });
     });
 
   const hemButton = document.getElementById("home-btn");
   hemButton.addEventListener("click", function () {
+    welcomeContainer.innerHTML = welcomeText;
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "auto",
+      behavior: "smooth",
     });
-    window.location.reload();
     document.getElementById("home-btn").style.display = "none";
   });
 });
